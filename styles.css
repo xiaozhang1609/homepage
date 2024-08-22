@@ -75,6 +75,7 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* 更新 social-icons 样式 */
 .social-icons {
     display: flex;
     flex-wrap: wrap;
@@ -85,11 +86,32 @@ h1 {
 .social-icons a {
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
-    transition: transform var(--transition-speed) ease;
+    font-size: 0.8em;
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.social-icons a:hover { transform: translateY(-3px) scale(1.1); }
+.social-icons a:hover {
+    transform: translateY(-3px) scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    .social-icons a {
+        font-size: 0.7em;
+        padding: 4px 8px;
+    }
+}
 
 #current-time {
     background-color: rgba(255, 255, 255, 0.1);
@@ -193,10 +215,6 @@ main { padding: 30px; }
     .avatar {
         margin-right: 0;
         margin-bottom: 15px;
-    }
-    .social-icons {
-        justify-content: center;
-        max-width: 100%;
     }
     #current-time { margin-top: 20px; }
     .links { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
